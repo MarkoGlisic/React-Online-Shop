@@ -1,2 +1,2 @@
 # React-Online-Shop
-Online Shop made in ReactJS
+Online Shop made with ReactJS, Firebase, React-Bootstrap
