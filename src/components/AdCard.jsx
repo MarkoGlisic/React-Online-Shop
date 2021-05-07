@@ -15,7 +15,7 @@ const AdCard = ({category, price, imgURL, title}) => {
           {`Price: ${price}$`}
         </Card.Text>
         
-        <Button as={Link} to={`/ads/${title}`} variant="primary">See more</Button>
+        <Button as={Link} to={`/${title}`} variant="primary">See more</Button>
       </Card.Body>
     </Card>
   );

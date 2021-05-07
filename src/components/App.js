@@ -28,7 +28,7 @@ function App() {
               <Route path="/forgot-password" component={ForgotPassword} />
               <Route exact path="/new" component={PostNewAd} />
               <Route exact path="/category" component={CategoryList} />
-              <Route exact path="/ads/:id" component={AdDetails} />
+              <Route exact path="/:id" component={AdDetails} />
             </Switch>
             </FirebaseDataProvider>
           </AuthProvider>

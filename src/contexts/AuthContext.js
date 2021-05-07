@@ -14,8 +14,6 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true)
 
 
-
-
   function signup(email, password) {
     return auth.createUserWithEmailAndPassword(email, password)
   }
@@ -43,7 +41,7 @@ useEffect(() => {
   function getCurrentUsername(currentUserEmail){
       currentUserEmail && database.collection('userProfiles').onSnapshot(querySnapshot => {
         querySnapshot.docs.map(doc=>{
-          if ((doc.data().email).toString() == currentUserEmail.toString()) {
+          if ((doc.data().email).toString() === currentUserEmail.toString()) {
             setCurrentUserName(doc.data().userName)
           }
         })

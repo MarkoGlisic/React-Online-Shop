@@ -15,6 +15,7 @@ export function FirebaseDataProvider({ children }) {
     getAllAds();
   }, []);
   
+
   function getAllAds() {
     database.collection("advertisementItem").onSnapshot((querySnapshot) => {
       setAllAds(
@@ -22,6 +23,7 @@ export function FirebaseDataProvider({ children }) {
           adID: doc.id,
           adOwner: doc.data().adOwner,
           category: doc.data().category,
+          description: doc.data().description,
           imgURL: doc.data().imgURL,
           price: doc.data().price,
           adName: doc.data().adName
@@ -29,7 +31,7 @@ export function FirebaseDataProvider({ children }) {
         );
       });
     }
-    
+      
     function setNewAd(title, description, imgURL, city, price, category, user) {
       database.collection("advertisementItem").add({
           adOwner: user,
@@ -42,20 +44,34 @@ export function FirebaseDataProvider({ children }) {
       })
     }
 
-    function setUser(email) {}
+
+    function test(item) {
+      setSpecificAd(item)
+    }
     function getCurrentUserAds(currentUser) {}
 
    function getSpecificAdInformation(title) {
-      database.collection('advertisementItem').onSnapshot((querySnapshot) => {
-        querySnapshot.docs.map(doc => {
-          if(doc.data().title == title) {
-            setSpecificAd({
-              adOwner: doc.data().adOwner,
-              price: doc.data().price
-            })
-          }
-        })
-      })
+      // allAds.map(ad => {
+      //   if (ad.adName == title.toString()) {
+      //     setSpecificAd({
+      //       adName: ad.adName,
+      //       adPrice: ad.price
+      //     })
+      //   }
+      // })
+
+      // database.collection('advertisementItem').get().then((querySnapshot) => {
+      //   querySnapshot.docs.map(doc => {
+      //     if(doc.data().adName === title.toString()) {
+      //       setSpecificAd({
+      //         adOwner: doc.data().adOwner,
+      //         description: doc.data().description,
+      //         adName: doc.data().adName,
+      //         price: doc.data().price
+      //       })
+      //     }
+      //   })
+      // })
     }
 
     
@@ -65,7 +81,8 @@ export function FirebaseDataProvider({ children }) {
       getSpecificAdInformation,
       specificAd,
       allAds,
-      setNewAd
+      setNewAd,
+      test
   };
 
   return (
