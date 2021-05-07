@@ -1,37 +1,50 @@
+import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import { ListGroup } from "react-bootstrap";
-import NavbarTop from '../components/NavbarTop'
+import NavbarTop from "../components/NavbarTop";
+import BreadcrumbComponent from "./BreadcrumbComponent"
 
 const CategoryList = () => {
-    return (
-        <>
-        <NavbarTop/>
-        <ListGroup>
-  <ListGroup.Item action variant="dark">Clothing</ListGroup.Item>
-  <ListGroup.Item action variant="dark">Tools</ListGroup.Item>
-  <ListGroup.Item action variant="dark">
-    Accessories
-  </ListGroup.Item>
-  <ListGroup.Item action variant="dark">
-    Sports
-  </ListGroup.Item>
-  <ListGroup.Item action variant="dark">
-    Furniture
-  </ListGroup.Item>
-  <ListGroup.Item action variant="dark">
-    Pets
-  </ListGroup.Item>
-  <ListGroup.Item action variant="dark">
-    Games
-  </ListGroup.Item>
-  <ListGroup.Item action variant="dark">
-    Books
-  </ListGroup.Item>
-  <ListGroup.Item action variant="dark">
-    Technology
-  </ListGroup.Item>
-</ListGroup>
-</>
-    )
-}
+  const [identifier, setIdentifier] = useState("");
 
-export default CategoryList
+  const categories = [
+    "Clothing",
+    "Tools",
+    "Accessories",
+    "Sports",
+    "Furniture",
+    "Pets",
+    "Games",
+    "Books",
+    "Technology",
+  ];
+  const handleIdentifier = (e) => {
+    e.preventDefault();
+    console.log(e.target.value);
+  };
+
+  return (
+    <>
+      <NavbarTop/>
+      <BreadcrumbComponent />
+      <ListGroup>
+        {categories.map((category) => {
+          return (
+            <div key={category}>
+              <ListGroup.Item
+                as={Link}
+                to={`/category/${category}`}
+                action
+                variant="dark"
+              >
+                {category}
+              </ListGroup.Item>
+            </div>
+          );
+        })}
+      </ListGroup>
+    </>
+  );
+};
+
+export default CategoryList;

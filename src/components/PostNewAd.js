@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { Container, Form, Col, Button } from "react-bootstrap";
 import Navbar from "./NavbarTop.jsx";
 import { useData } from "../contexts/FirebaseDataContext";
+import BreadcrumbComponent from "./BreadcrumbComponent";
 
 const PostNewAd = () => {
   const history = useHistory();
@@ -36,7 +37,7 @@ const PostNewAd = () => {
   return (
     <div>
       <Navbar />
-
+      <BreadcrumbComponent/>
       <Container style={{ marginTop: "5rem" }}>
         <Form onSubmit={handleSubmit}>
           <Form.Row>

@@ -10,6 +10,7 @@ import UpdateProfile from './UpdateProfile';
 import PostNewAd from './PostNewAd'
 import CategoryList from "./CategoryList";
 import AdDetails from "./AdDetails";
+import SelectedCategory from "./SelectedCategory";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
               <Route path="/forgot-password" component={ForgotPassword} />
               <Route exact path="/new" component={PostNewAd} />
               <Route exact path="/category" component={CategoryList} />
+              <Route exact path="/category/:id" component={SelectedCategory} />
               <Route exact path="/:id" component={AdDetails} />
             </Switch>
             </FirebaseDataProvider>

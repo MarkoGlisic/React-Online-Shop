@@ -30,8 +30,6 @@ export default function Login() {
 
     useEffect(() => {
       return getCurrentUserEmailAddress(currentUserEmailAddress)
-      
-      
     }, [currentUserEmailAddress])
     
     return (
