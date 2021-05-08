@@ -26,7 +26,7 @@ const CategoryList = () => {
   return (
     <>
       <NavbarTop/>
-      <BreadcrumbComponent />
+      <BreadcrumbComponent path={'my-ads'} name={'My Ads'} id={"Categories"} />
       <ListGroup>
         {categories.map((category) => {
           return (

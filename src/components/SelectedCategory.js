@@ -1,4 +1,5 @@
 import {useParams} from 'react-router-dom';
+import BreadcrumbComponent from './BreadcrumbComponent';
 import NavbarTop from './NavbarTop';
 
 const SelectedCategory = () => {
@@ -7,6 +8,7 @@ const SelectedCategory = () => {
     return (
         <div>
             <NavbarTop/>
+            <BreadcrumbComponent path={'Category'} id={id}/>
             <h1 style={{marginTop:'5rem'}}>{id}</h1>
         </div>
     )

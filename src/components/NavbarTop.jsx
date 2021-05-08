@@ -19,7 +19,7 @@ const NavbarTop = () => {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link as={Link} to="/new">Post new ad</Nav.Link>
-          <Nav.Link href="#pricing">My ads</Nav.Link> 
+          <Nav.Link as={Link} to="/my-ads">My ads</Nav.Link> 
           <Nav.Link as={Link} to="/category">Categories</Nav.Link> 
         </Nav>
         <Nav>

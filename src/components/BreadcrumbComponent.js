@@ -1,14 +1,17 @@
 import {Breadcrumb} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
-const BreadcrumbComponent = () => {
+const BreadcrumbComponent = ({path, id, name}) => {
   return (
     <div style={{marginTop:'3rem', textAlign:'center', marginBottom:'-17px'}}>
       <Breadcrumb>
-        <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-        <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
-          Ads
+        <Breadcrumb.Item>
+          <Link to='/'>Home</Link>
+          </Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <Link to={`/${path}`}>{name}</Link>
         </Breadcrumb.Item>
-        <Breadcrumb.Item active>Categories</Breadcrumb.Item>
+        <Breadcrumb.Item active>{id}</Breadcrumb.Item>
       </Breadcrumb>
     </div>
   );

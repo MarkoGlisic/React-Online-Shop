@@ -37,7 +37,7 @@ const PostNewAd = () => {
   return (
     <div>
       <Navbar />
-      <BreadcrumbComponent/>
+      <BreadcrumbComponent path={"my-ads"} name={'My Ads'}id={'Post New'}/>
       <Container style={{ marginTop: "5rem" }}>
         <Form onSubmit={handleSubmit}>
           <Form.Row>
