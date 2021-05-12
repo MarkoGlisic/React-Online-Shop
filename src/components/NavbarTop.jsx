@@ -23,7 +23,7 @@ const NavbarTop = () => {
           <Nav.Link as={Link} to="/category">Categories</Nav.Link> 
         </Nav>
         <Nav>
-          <Nav.Link href="#deets">Settings</Nav.Link>
+          <Nav.Link as={Link} to='/settings'>Settings</Nav.Link>
           <Nav.Link eventKey={2} onClick={handleLogout}>
             Logout
           </Nav.Link>

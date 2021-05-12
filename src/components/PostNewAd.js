@@ -38,7 +38,8 @@ const PostNewAd = () => {
     <div>
       <Navbar />
       <BreadcrumbComponent path={"my-ads"} name={'My Ads'}id={'Post New'}/>
-      <Container style={{ marginTop: "5rem" }}>
+      <h2 style={{textAlign:'center', marginTop:'2rem',color:'#343A40'}}>Post New Ad</h2>
+      <Container style={{ marginTop: "2rem" }}>
         <Form onSubmit={handleSubmit}>
           <Form.Row>
             <Form.Group as={Col}>

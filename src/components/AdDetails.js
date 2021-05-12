@@ -1,14 +1,21 @@
 import { useParams } from 'react-router-dom'
 import NavbarTop from './NavbarTop'
+import BreadcrumbComponent from './BreadcrumbComponent'
 import {useData} from '../contexts/FirebaseDataContext'
+import { useEffect, useState } from 'react'
 
 const AdDetails = () => {
     const {id} = useParams()
     const {allAds} = useData()
-     
+    
     return (
         <div>
             <NavbarTop/>
+            <BreadcrumbComponent
+              path={"category"}
+              name={'Categories'}
+              id={id}
+            />
             {allAds.map(ad=>{
                 if(ad.adName === id) {
                     return(

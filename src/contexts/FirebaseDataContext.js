@@ -9,12 +9,26 @@ export function useData() {
 
 export function FirebaseDataProvider({ children }) {
     const [allAds, setAllAds] = useState();
+    const [allUsers, setAllUsers] = useState();
   const [specificAd, setSpecificAd] = useState();
 
   useEffect(() => {
     getAllAds();
+    getAllUsers();
   }, []);
   
+  function getAllUsers() {
+    database.collection('userProfiles').onSnapshot((querySnapshot) => {
+      setAllUsers(
+        querySnapshot.docs.map((doc) => ({
+          date: doc.data().date,
+          email: doc.data().email,
+          phoneNumber: doc.data().phoneNumber,
+          userName: doc.data().userName
+        }))
+      )
+    })
+  }
 
   function getAllAds() {
     database.collection("advertisementItem").onSnapshot((querySnapshot) => {
@@ -26,7 +40,8 @@ export function FirebaseDataProvider({ children }) {
           description: doc.data().description,
           imgURL: doc.data().imgURL,
           price: doc.data().price,
-          adName: doc.data().adName
+          adName: doc.data().adName,
+          views: doc.data().views
         }))
         );
       });
@@ -40,49 +55,17 @@ export function FirebaseDataProvider({ children }) {
           adName: title,
           description: description,
           city: city,
-          price: price
+          price: price,
+          views: 0
       })
     }
 
 
-    function test(item) {
-      setSpecificAd(item)
-    }
-    function getCurrentUserAds(currentUser) {}
-
-   function getSpecificAdInformation(title) {
-      // allAds.map(ad => {
-      //   if (ad.adName == title.toString()) {
-      //     setSpecificAd({
-      //       adName: ad.adName,
-      //       adPrice: ad.price
-      //     })
-      //   }
-      // })
-
-      // database.collection('advertisementItem').get().then((querySnapshot) => {
-      //   querySnapshot.docs.map(doc => {
-      //     if(doc.data().adName === title.toString()) {
-      //       setSpecificAd({
-      //         adOwner: doc.data().adOwner,
-      //         description: doc.data().description,
-      //         adName: doc.data().adName,
-      //         price: doc.data().price
-      //       })
-      //     }
-      //   })
-      // })
-    }
-
-    
-    
     const value = {
-      getCurrentUserAds,
-      getSpecificAdInformation,
       specificAd,
       allAds,
       setNewAd,
-      test
+      allUsers
   };
 
   return (
