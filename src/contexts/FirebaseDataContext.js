@@ -8,26 +8,25 @@ export function useData() {
 }
 
 export function FirebaseDataProvider({ children }) {
-    const [allAds, setAllAds] = useState();
-    const [allUsers, setAllUsers] = useState();
-  const [specificAd, setSpecificAd] = useState();
+  const [allAds, setAllAds] = useState();
+  const [allUsers, setAllUsers] = useState();
 
   useEffect(() => {
     getAllAds();
     getAllUsers();
   }, []);
-  
+
   function getAllUsers() {
-    database.collection('userProfiles').onSnapshot((querySnapshot) => {
+    database.collection("userProfiles").onSnapshot((querySnapshot) => {
       setAllUsers(
         querySnapshot.docs.map((doc) => ({
           date: doc.data().date,
           email: doc.data().email,
           phoneNumber: doc.data().phoneNumber,
-          userName: doc.data().userName
+          userName: doc.data().userName,
         }))
-      )
-    })
+      );
+    });
   }
 
   function getAllAds() {
@@ -41,31 +40,55 @@ export function FirebaseDataProvider({ children }) {
           imgURL: doc.data().imgURL,
           price: doc.data().price,
           adName: doc.data().adName,
-          views: doc.data().views
+          views: doc.data().views,
         }))
-        );
+      );
+    });
+  }
+
+  function setNewAd(title, description, imgURL, city, price, category, user) {
+    database.collection("advertisementItem").add({
+      adOwner: user,
+      category: category,
+      imgURL: imgURL,
+      adName: title,
+      description: description,
+      city: city,
+      price: price,
+      views: 0,
+    });
+  }
+
+  function deleteAd(title) {
+    let adRef = database
+      .collection("advertisementItem")
+      .where("adName", "==", title);
+    adRef.get().then((querySnapshot) => {
+      querySnapshot.forEach(function (doc) {
+        doc.ref.delete();
       });
-    }
-      
-    function setNewAd(title, description, imgURL, city, price, category, user) {
-      database.collection("advertisementItem").add({
-          adOwner: user,
-          category: category,
-          imgURL: imgURL,
-          adName: title,
-          description: description,
-          city: city,
-          price: price,
-          views: 0
-      })
-    }
+    });
+  }
 
+  function updateAd(title, update) {
+    let adRef = database
+      .collection("advertisementItem")
+      .where("adName", "==", title);
+    adRef.get().then((querySnapshot) => {
+      querySnapshot.forEach(function (doc) {
+        doc.ref.update({
+          adName: update
+        });
+      });
+    });
+  }
 
-    const value = {
-      specificAd,
-      allAds,
-      setNewAd,
-      allUsers
+  const value = {
+    allAds,
+    setNewAd,
+    allUsers,
+    deleteAd,
+    updateAd
   };
 
   return (

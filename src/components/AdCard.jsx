@@ -1,9 +1,17 @@
-import { Button, Card} from "react-bootstrap"
-import { Link } from 'react-router-dom'
+import { useState } from "react"
+import { Button, Card, Modal} from "react-bootstrap"
+import DeleteConfirmationModal from './DeleteConfirmationModal'
+import UpdateConfirmationModal from './UpdateConfirmationModal'
 
-const AdCard = ({category, price, imgURL, title, canDelete, canEdit,seeMoreIsVisible}) => {
+const AdCard = ({category, price, imgURL, title}) => {
+  
+  const [showUpdate, setShowUpdate] = useState(false)
+  const [showDelete, setShowDelete] = useState(false)
+
+
+
   return (
-
+    <>
     <Card style={{ width: "18rem", margin:'80px 18px -20px 40px'}}>
       <Card.Img variant="top" src={imgURL}/>
       <Card.Body>
@@ -14,13 +22,17 @@ const AdCard = ({category, price, imgURL, title, canDelete, canEdit,seeMoreIsVis
         <Card.Text>
           {`Price: ${price}$`}
         </Card.Text>
-        
-        {seeMoreIsVisible && <Button as={Link} to={`/${title}`} variant="primary">See more</Button>}
-       {canEdit && <Button as={Link} to={`/${title}`} variant="warning">Edit</Button>}
-       {canDelete && <Button as={Link} to={`/${title}`} variant="danger">Delete</Button>}
+        <DeleteConfirmationModal title={title}/>
+        <UpdateConfirmationModal title={title}/>
+
       </Card.Body>
     </Card>
-  );
-};
+ 
+    
+
+    
+  </>
+);
+}
 
 export default AdCard;

@@ -7,7 +7,9 @@ import { useState } from "react";
 import styles from '../modules/pagination.module.css';
 
 const Home = () => {
-  const { allAds, allUsers } = useData();
+
+  // Svu ovu logic prebaciti u Pagination componentu
+  const { allAds } = useData();
   const [pageNumber, setPageNumber] = useState(0)
 
   const changePage = ({selected}) => {
@@ -35,7 +37,8 @@ const Home = () => {
   return (
     <>
       <NavbarTop />
-            <div style={{marginTop:'4rem', marginBottom:'10rem'}}>
+            // Kod ispod staviti u Pagination componentu
+            <div style={{marginTop:'4rem', marginBottom:'10rem'}}> {/*Prebaciti u pagination module*/}
               <Container>
                 <Row>
                   {displayAds}
@@ -47,9 +50,9 @@ const Home = () => {
                pageCount={pageCount}
                onPageChange={changePage}
                containerClassName={styles.paginationBtns}
-               previousLinkClassName={'previousBtn'}
-               nextLinkClassName={'nextLink'}
-               disabledClassName={'paginationDisabled'}
+               previousLinkClassName={styles.previousBtn}
+               nextLinkClassName={styles.nextLink}
+               disabledClassName={styles.paginationDisabled}
                activeClassName={styles.paginationActive}
               />
             </div>          

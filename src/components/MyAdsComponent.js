@@ -24,9 +24,6 @@ const MyAdsComponent = () => {
                 title={ad.adName}
                 price={ad.price}
                 imgURL={ad.imgURL}
-                canDelete={true}
-                canEdit={true}
-                seeMoreIsVisible={false}
               />
             </div>
           );
