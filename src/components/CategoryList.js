@@ -1,11 +1,9 @@
-import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ListGroup } from "react-bootstrap";
 import NavbarTop from "../components/NavbarTop";
 import BreadcrumbComponent from "./BreadcrumbComponent"
 
 const CategoryList = () => {
-  const [identifier, setIdentifier] = useState("");
 
   const categories = [
     "Clothing",
@@ -18,11 +16,6 @@ const CategoryList = () => {
     "Books",
     "Technology",
   ];
-  const handleIdentifier = (e) => {
-    e.preventDefault();
-    console.log(e.target.value);
-  };
-
   return (
     <>
       <NavbarTop/>

@@ -34,6 +34,7 @@ export function FirebaseDataProvider({ children }) {
       setAllAds(
         querySnapshot.docs.map((doc) => ({
           adID: doc.id,
+          city: doc.data().city,
           adOwner: doc.data().adOwner,
           category: doc.data().category,
           description: doc.data().description,
@@ -70,14 +71,32 @@ export function FirebaseDataProvider({ children }) {
     });
   }
 
-  function updateAd(title, update) {
-    let adRef = database
+  function updateAd(title, newTitle, newDescription, newPrice, newCity, newCategory,newURL) {
+    const adRef = database
       .collection("advertisementItem")
       .where("adName", "==", title);
     adRef.get().then((querySnapshot) => {
       querySnapshot.forEach(function (doc) {
         doc.ref.update({
-          adName: update
+          adName: newTitle,
+          city: newCity,
+          description: newDescription,
+          price: newPrice,
+          category: newCategory,
+          imgURL: newURL
+        });
+      });
+    });
+  }
+
+  function updateViews(title, newViews) {
+    const adRef = database
+      .collection("advertisementItem")
+      .where("adName", "==", title);
+    adRef.get().then((querySnapshot) => {
+      querySnapshot.forEach(function (doc) {
+        doc.ref.update({
+          views: newViews
         });
       });
     });
@@ -88,7 +107,8 @@ export function FirebaseDataProvider({ children }) {
     setNewAd,
     allUsers,
     deleteAd,
-    updateAd
+    updateAd,
+    updateViews
   };
 
   return (

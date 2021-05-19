@@ -18,12 +18,14 @@ const MyAdsComponent = () => {
       {allAds.map((ad) => {
         if (ad.adOwner === currentUserName) {
           return (
-            <div key={ad.title}>
+            <div key={ad.adName + ad.imgURL}>
               <AdCard
                 category={ad.category}
                 title={ad.adName}
                 price={ad.price}
                 imgURL={ad.imgURL}
+                description={ad.description}
+                city={ad.city}
               />
             </div>
           );

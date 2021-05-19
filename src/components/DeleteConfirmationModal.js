@@ -1,6 +1,7 @@
 import {useData} from '../contexts/FirebaseDataContext'
 import { Button, Modal, Col, Image} from "react-bootstrap"
 import { useState } from 'react';
+import deleteImage from '../images/confirm-delete-modal-images/delete-removebg-preview.png'
 
 
 const DeleteConfirmationModal = ({title}) => {
@@ -14,6 +15,7 @@ const DeleteConfirmationModal = ({title}) => {
     const handleDelete = (e) => {
       e.preventDefault()
       deleteAd(title)
+      handleClose()
     }    
   
   return (
@@ -22,15 +24,15 @@ const DeleteConfirmationModal = ({title}) => {
         <Modal.Header closeButton>
           <Modal.Title>Are you sure?</Modal.Title>
         </Modal.Header>
-        <Col xs={6} md={4}>
-      <Image src="holder.js/171x180" roundedCircle />
+        <Col className='d-flex justify-content-center mt-3'>
+      <Image width={200} height={125}  src={deleteImage} roundedCircle />
     </Col>
         <Modal.Body>Do you really want to delete this record? This process cannot be undone.</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="danger" onClick={handleClose}>
+          <Button variant="danger" onClick={handleDelete}>
             Delete
           </Button>
         </Modal.Footer>

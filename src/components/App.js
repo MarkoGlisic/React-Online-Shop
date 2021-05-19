@@ -27,7 +27,7 @@ function App() {
               <PrivateRoute path="/update-profile" component={UpdateProfile} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
-              <Route path="/forgot-password" component={ForgotPassword} />
+              <Route exact path="/forgot-password" component={ForgotPassword} />
               <Route exact path="/new" component={PostNewAd} />
               <Route exact path="/category" component={CategoryList} />
               <Route exact path="/my-ads" component={MyAdsComponent} />

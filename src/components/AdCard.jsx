@@ -1,15 +1,8 @@
-import { useState } from "react"
-import { Button, Card, Modal} from "react-bootstrap"
+import { Card, Container} from "react-bootstrap"
 import DeleteConfirmationModal from './DeleteConfirmationModal'
 import UpdateConfirmationModal from './UpdateConfirmationModal'
 
-const AdCard = ({category, price, imgURL, title}) => {
-  
-  const [showUpdate, setShowUpdate] = useState(false)
-  const [showDelete, setShowDelete] = useState(false)
-
-
-
+const AdCard = ({category, price, imgURL, title, description, city}) => {
   return (
     <>
     <Card style={{ width: "18rem", margin:'80px 18px -20px 40px'}}>
@@ -22,15 +15,12 @@ const AdCard = ({category, price, imgURL, title}) => {
         <Card.Text>
           {`Price: ${price}$`}
         </Card.Text>
-        <DeleteConfirmationModal title={title}/>
-        <UpdateConfirmationModal title={title}/>
-
+        <Container className='d-flex flex-row justify-content-around'>
+          <UpdateConfirmationModal title={title} category={category} imgURL={imgURL} description={description} city={city} price={price}/>    
+          <DeleteConfirmationModal title={title}/>
+        </Container>
       </Card.Body>
-    </Card>
- 
-    
-
-    
+    </Card>    
   </>
 );
 }
