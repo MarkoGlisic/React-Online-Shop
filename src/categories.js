@@ -1,15 +1,16 @@
 import {ShirtOutline, HammerOutline, BagOutline, AmericanFootballOutline, BedOutline, PawOutline,GameControllerOutline,BookOutline, PhonePortraitOutline} from 'react-ionicons'
 
+
 const categories = [
-    {category:"Clothing", img:<ShirtOutline/>},
-    {category:"Tools", img:<HammerOutline/>},
-    {category:"Accessories", img:<BagOutline/>},
-    {category:"Sports", img:<AmericanFootballOutline/>},
-    {category:"Furniture", img:<BedOutline/>},
-    {category:"Pets", img:<PawOutline/>},
-    {category:"Games", img:<GameControllerOutline/>},
-    {category:"Books", img:<BookOutline/>},
-    {category:"Technology", img:<PhonePortraitOutline/>}
+    {name:"Clothing", icon:<ShirtOutline/>},
+    {name:"Tools", icon:<HammerOutline/>},
+    {name:"Accessories", icon:<BagOutline/>},
+    {name:"Sports", icon:<AmericanFootballOutline/>},
+    {name:"Furniture", icon:<BedOutline/>},
+    {name:"Pets", icon:<PawOutline/>},
+    {name:"Games", icon:<GameControllerOutline/>},
+    {name:"Books", icon:<BookOutline/>},
+    {name:"Technology", icon:<PhonePortraitOutline/>}
   ];
 
   export default categories

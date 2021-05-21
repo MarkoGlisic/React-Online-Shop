@@ -3,9 +3,8 @@ import { ListGroup, Container, Image } from "react-bootstrap";
 import NavbarTop from "../components/NavbarTop";
 import BreadcrumbComponent from "./BreadcrumbComponent";
 import categories from "../categories";
-const CategoryList = () => {
-  console.log(categories);
 
+const CategoryList = () => {
   return (
     <>
       <NavbarTop />
@@ -16,13 +15,13 @@ const CategoryList = () => {
             <div key={category}>
               <ListGroup.Item
                 as={Link}
-                to={`/category/${category.category}`}
+                to={`/category/${category.name}`}
                 action
-                variant="dark"
+                variant="light"
               >
                 <Container className="d-flex flex-direction-row" style={{margin:"0", padding:'0'}}> 
-                <div style={{margin:' 0px 10px 0px -10px',fontSize:'15px'}}>{category.img}</div> 
-                <div>{category.category}</div>
+                {/* <div>{'img'}</div> */} 
+                {/* <div>{'name'}</div> */}
 
                 </Container>
               </ListGroup.Item>
