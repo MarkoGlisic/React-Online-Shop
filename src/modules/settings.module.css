@@ -19,6 +19,8 @@
 }
 
 .userImage {
+  width: 130px;
+  height: 130px;
   border: 3px solid #4e575f;
   padding: 5px;
   margin: 20px;
@@ -31,6 +33,10 @@
 
 .settingsUserName {
   color: #a2abb3;
+}
+
+.columnStyles {
+  text-align: center;
 }
 
 .wrapper {

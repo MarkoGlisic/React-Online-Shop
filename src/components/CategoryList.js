@@ -17,11 +17,11 @@ const CategoryList = () => {
                 as={Link}
                 to={`/category/${category.name}`}
                 action
-                variant="light"
+                variant="dark"
               >
                 <Container className="d-flex flex-direction-row" style={{margin:"0", padding:'0'}}> 
-                {/* <div>{'img'}</div> */} 
-                {/* <div>{'name'}</div> */}
+                <div style={{fontSize:'15px'}}>{category.icon}</div> 
+                <div style={{margin:'0 0 0 12px'}}>{category.name}</div>
 
                 </Container>
               </ListGroup.Item>
