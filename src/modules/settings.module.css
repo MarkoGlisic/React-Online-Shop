@@ -1,0 +1,66 @@
+.btnGroup a {
+  text-decoration: none;
+  outline: none;
+  color: #343a40;
+  width: 80vw;
+  margin: 10px 0px 5px -70px;
+  padding: 0 0 0 0;
+  text-align: start;
+  font-size: 18px;
+}
+
+.btnGroup {
+  margin: 35px 0 40px 0;
+}
+
+.btnLogout {
+  color: #d00;
+  font-weight: 600;
+}
+
+.userImage {
+  border: 3px solid #4e575f;
+  padding: 5px;
+  margin: 20px;
+  -webkit-box-shadow: 0 0 10px #a2abb3;
+}
+
+.settingsTitle {
+  color: #67737e;
+}
+
+.settingsUserName {
+  color: #a2abb3;
+}
+
+.wrapper {
+  color: #343a40;
+  background: white;
+  padding: 1em;
+  margin-top: 1.9em;
+  position: relative;
+  border: solid 2.5px #a2abb3;
+}
+.wrapper::before,
+.wrapper::after {
+  position: absolute;
+  background: inherit;
+  content: "";
+  z-index: 1;
+}
+.wrapper::before {
+  width: 100px;
+  left: calc(50% - 50px);
+  height: calc(100% + 4px);
+  top: -2px;
+}
+.wrapper::after {
+  height: 100px;
+  left: -2px;
+  width: calc(100% + 4px);
+  top: calc(50% - 50px);
+}
+.wrapper > * {
+  position: relative;
+  z-index: 2; /* ensure any child elements sit above pseudos */
+}
