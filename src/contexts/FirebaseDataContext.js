@@ -71,7 +71,15 @@ export function FirebaseDataProvider({ children }) {
     });
   }
 
-  function updateAd(title, newTitle, newDescription, newPrice, newCity, newCategory,newURL) {
+  function updateAd(
+    title,
+    newTitle,
+    newDescription,
+    newPrice,
+    newCity,
+    newCategory,
+    newURL
+  ) {
     const adRef = database
       .collection("advertisementItem")
       .where("adName", "==", title);
@@ -83,7 +91,7 @@ export function FirebaseDataProvider({ children }) {
           description: newDescription,
           price: newPrice,
           category: newCategory,
-          imgURL: newURL
+          imgURL: newURL,
         });
       });
     });
@@ -96,7 +104,7 @@ export function FirebaseDataProvider({ children }) {
     adRef.get().then((querySnapshot) => {
       querySnapshot.forEach(function (doc) {
         doc.ref.update({
-          views: newViews
+          views: newViews,
         });
       });
     });
@@ -108,7 +116,7 @@ export function FirebaseDataProvider({ children }) {
     allUsers,
     deleteAd,
     updateAd,
-    updateViews
+    updateViews,
   };
 
   return (

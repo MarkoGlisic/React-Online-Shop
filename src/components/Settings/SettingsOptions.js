@@ -14,10 +14,10 @@ const SettingsOptions = () => {
   const history = useHistory();
 
   const handleLogout = (e) => {
-      e.preventDefault()
-      logout()
-      history.push('/')
-  }
+    e.preventDefault();
+    logout();
+    history.push("/");
+  };
 
   return (
     <div className={styles.btnGroup}>
@@ -28,11 +28,11 @@ const SettingsOptions = () => {
         <Link>{<MailOutline />} Change Email</Link>
       </Container>
       <Container className={`d-flex flex-direction-row`}>
-        <Link to='/forgot-password'>{<LockOpenOutline />} Forgot Password</Link>
+        <Link to="/forgot-password">{<LockOpenOutline />} Forgot Password</Link>
       </Container>
 
       <Container className="d-flex flex-direction-row">
-        <Link onClick={handleLogout}> 
+        <Link onClick={handleLogout}>
           {<LogOutOutline color={"#d00"} />}{" "}
           <span className={styles.btnLogout}>Log Out</span>
         </Link>

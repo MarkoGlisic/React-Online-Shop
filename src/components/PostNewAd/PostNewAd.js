@@ -5,8 +5,7 @@ import { useData } from "../../contexts/FirebaseDataContext";
 import { Container, Form, Col, Button } from "react-bootstrap";
 import Navbar from "../Header/NavbarTop.jsx";
 import BreadcrumbComponent from "../Header/BreadcrumbComponent";
-import styles from '../../modules/postNewAd.module.css'
-
+import styles from "../../modules/postNewAd.module.css";
 
 const PostNewAd = () => {
   const history = useHistory();
@@ -36,7 +35,7 @@ const PostNewAd = () => {
   return (
     <div>
       <Navbar />
-      <BreadcrumbComponent path={"my-ads"} name={'My Ads'}id={'Post New'}/>
+      <BreadcrumbComponent path={"my-ads"} name={"My Ads"} id={"Post New"} />
       <h2 className={styles.newAdTitle}>Post New Ad</h2>
       <Container className={styles.newAdContainer}>
         <Form onSubmit={handleSubmit}>

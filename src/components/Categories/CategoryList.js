@@ -3,7 +3,7 @@ import { ListGroup, Container, Image } from "react-bootstrap";
 import NavbarTop from "../Header/NavbarTop";
 import BreadcrumbComponent from "../Header/BreadcrumbComponent";
 import categories from "../../categories";
-import styles from '../../modules/categories.module.css'
+import styles from "../../modules/categories.module.css";
 
 const CategoryList = () => {
   return (
@@ -20,10 +20,11 @@ const CategoryList = () => {
                 action
                 variant="dark"
               >
-                <Container className={`d-flex flex-direction-row ${styles.categoryContainer}`} > 
-                <div className={styles.categoryIcon}>{category.icon}</div> 
-                <div className={styles.categoryName}>{category.name}</div>
-
+                <Container
+                  className={`d-flex flex-direction-row ${styles.categoryContainer}`}
+                >
+                  <div className={styles.categoryIcon}>{category.icon}</div>
+                  <div className={styles.categoryName}>{category.name}</div>
                 </Container>
               </ListGroup.Item>
             </div>

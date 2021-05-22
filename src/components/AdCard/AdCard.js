@@ -2,7 +2,7 @@ import { Media } from "react-bootstrap";
 import CardImage from "./CardImage";
 import CardText from "./CardText";
 import CardFooterInfo from "./CardFooterInfo";
-import styles from '../../modules/card.module.css';
+import styles from "../../modules/card.module.css";
 
 const AdCard = ({
   category,
@@ -15,10 +15,7 @@ const AdCard = ({
 }) => {
   return (
     <div>
-      <Media
-        className={`shadow rounded ${styles.adCardContainer}`}
-        
-      >
+      <Media className={`shadow rounded ${styles.adCardContainer}`}>
         <CardImage imgURL={imgURL} />
         <Media.Body className={styles.adCardBody}>
           <CardText title={title} price={price} description={description} />

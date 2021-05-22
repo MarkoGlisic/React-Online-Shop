@@ -8,7 +8,7 @@ const UpdateConfirmationModal = ({
   title,
   description,
   city,
-  imgURL
+  imgURL,
 }) => {
   const [show, setShow] = useState(false);
   const { updateAd } = useData();
@@ -18,10 +18,17 @@ const UpdateConfirmationModal = ({
 
   const handleUpdate = (e) => {
     e.preventDefault();
-    updateAd(title, newTitleRef.current.value, newDescriptionRef.current.value, newPriceRef.current.value, newCityRef.current.value, newCategoryRef.current.value,newURLRef.current.value)
-    handleClose()
+    updateAd(
+      title,
+      newTitleRef.current.value,
+      newDescriptionRef.current.value,
+      newPriceRef.current.value,
+      newCityRef.current.value,
+      newCategoryRef.current.value,
+      newURLRef.current.value
+    );
+    handleClose();
   };
-
 
   const newTitleRef = useRef();
   const newDescriptionRef = useRef();
@@ -29,7 +36,6 @@ const UpdateConfirmationModal = ({
   const newCityRef = useRef();
   const newCategoryRef = useRef();
   const newURLRef = useRef();
-
 
   return (
     <div>
@@ -57,7 +63,7 @@ const UpdateConfirmationModal = ({
               <InputGroup.Prepend>
                 <InputGroup.Text id="basic-addon1">URL</InputGroup.Text>
               </InputGroup.Prepend>
-              <FormControl defaultValue={imgURL} ref={newURLRef}/>
+              <FormControl defaultValue={imgURL} ref={newURLRef} />
             </InputGroup>
 
             <label htmlFor="amount">Price</label>
@@ -76,7 +82,12 @@ const UpdateConfirmationModal = ({
             </InputGroup>
             <Form.Group>
               <Form.Label>Category</Form.Label>
-              <Form.Control as="select" defaultValue={category} ref={newCategoryRef} required>
+              <Form.Control
+                as="select"
+                defaultValue={category}
+                ref={newCategoryRef}
+                required
+              >
                 <option>Clothing</option>
                 <option>Tools</option>
                 <option>Sports</option>

@@ -1,5 +1,5 @@
 import { Container, Row } from "react-bootstrap";
-import styles from '../../modules/card.module.css'
+import styles from "../../modules/card.module.css";
 
 const CardText = ({ title, price, description }) => {
   return (
@@ -7,16 +7,10 @@ const CardText = ({ title, price, description }) => {
       <Container className={`d-flex flex-row ${styles.cardTextContainer}`}>
         <Row>
           <h5 className={styles.cardTextTitle}>{title}</h5>
-          <p className={styles.cardTextPrice}>
-            Price: {price}$
-          </p>
+          <p className={styles.cardTextPrice}>Price: {price}$</p>
         </Row>
       </Container>
-      <p
-        className={styles.cardTextDescription}
-      >
-        {description}
-      </p>
+      <p className={styles.cardTextDescription}>{description}</p>
     </>
   );
 };
