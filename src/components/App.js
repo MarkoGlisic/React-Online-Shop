@@ -1,18 +1,18 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from '../contexts/AuthContext';
 import { FirebaseDataProvider } from '../contexts/FirebaseDataContext'
-import PrivateRoute from './PrivateRoute';
-import Login from './Login';
-import Signup from './Signup';
-import ForgotPassword from './ForgotPassword';
-import Home from './Home';
-import UpdateProfile from './UpdateProfile';
-import PostNewAd from './PostNewAd'
-import CategoryList from "./CategoryList";
-import AdDetails from "./AdDetails";
-import SelectedCategory from "./SelectedCategory";
-import MyAdsComponent from "./MyAdsComponent";
-import SettingsMenu from './SettingsMenu'
+import PrivateRoute from './Login/PrivateRoute';
+import Login from './Login/Login';
+import Signup from './Login/Signup';
+import ForgotPassword from './Login/ForgotPassword';
+import Home from './Home/Home';
+import UpdateProfile from './Settings/UpdateProfile';
+import PostNewAd from './PostNewAd/PostNewAd'
+import CategoryList from "./Categories/CategoryList";
+import AdDetails from "./Home/AdDetails";
+import SelectedCategory from "./Categories/SelectedCategory";
+import MyAdsComponent from "./MyAds/MyAdsComponent";
+import SettingsMenu from './Settings/SettingsMenu'
 
 function App() {
 

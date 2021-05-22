@@ -1,6 +1,6 @@
 import { Link, useHistory } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContext";
-import styles from "../modules/settings.module.css";
+import { useAuth } from "../../contexts/AuthContext";
+import styles from "../../modules/settings.module.css";
 import { Container } from "react-bootstrap";
 import {
   PersonOutline,

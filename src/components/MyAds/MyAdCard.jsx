@@ -2,7 +2,7 @@ import { Card, Container} from "react-bootstrap"
 import DeleteConfirmationModal from './DeleteConfirmationModal'
 import UpdateConfirmationModal from './UpdateConfirmationModal'
 
-const AdCard = ({category, price, imgURL, title, description, city}) => {
+const MyAdCard = ({category, price, imgURL, title, description, city}) => {
   return (
     <>
     <Card style={{ width: "18rem", margin:'80px 18px -20px 40px'}}>
@@ -25,4 +25,4 @@ const AdCard = ({category, price, imgURL, title, description, city}) => {
 );
 }
 
-export default AdCard;
+export default MyAdCard;

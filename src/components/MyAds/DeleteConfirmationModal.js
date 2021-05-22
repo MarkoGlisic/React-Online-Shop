@@ -1,7 +1,7 @@
-import {useData} from '../contexts/FirebaseDataContext'
+import {useData} from '../../contexts/FirebaseDataContext'
 import { Button, Modal, Col, Image} from "react-bootstrap"
 import { useState } from 'react';
-import deleteImage from '../images/confirm-delete-modal-images/delete-removebg-preview.png'
+import deleteImage from '../../../src/images/confirm-delete-modal-images/delete-removebg-preview.png'
 
 
 const DeleteConfirmationModal = ({title}) => {

@@ -1,10 +1,10 @@
 import { useRef } from "react";
-import { useAuth } from "../contexts/AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 import { useHistory } from "react-router-dom";
 import { Container, Form, Col, Button } from "react-bootstrap";
-import Navbar from "./NavbarTop.jsx";
-import { useData } from "../contexts/FirebaseDataContext";
-import BreadcrumbComponent from "./BreadcrumbComponent";
+import Navbar from "../Header/NavbarTop.jsx";
+import { useData } from "../../contexts/FirebaseDataContext";
+import BreadcrumbComponent from "../Header/BreadcrumbComponent";
 
 const PostNewAd = () => {
   const history = useHistory();

@@ -1,8 +1,8 @@
-import AdCard from "./AdCard";
-import BreadcrumbComponent from "./BreadcrumbComponent";
-import NavbarTop from "./NavbarTop";
-import { useData } from "../contexts/FirebaseDataContext";
-import { useAuth } from "../contexts/AuthContext";
+import MyAdCard from "./MyAdCard";
+import BreadcrumbComponent from "../Header/BreadcrumbComponent";
+import NavbarTop from "../Header/NavbarTop";
+import { useData } from "../../contexts/FirebaseDataContext";
+import { useAuth } from "../../contexts/AuthContext";
 
 const MyAdsComponent = () => {
   const { allAds } = useData();
@@ -19,7 +19,7 @@ const MyAdsComponent = () => {
         if (ad.adOwner === currentUserName) {
           return (
             <div key={ad.adName + ad.imgURL}>
-              <AdCard
+              <MyAdCard
                 category={ad.category}
                 title={ad.adName}
                 price={ad.price}

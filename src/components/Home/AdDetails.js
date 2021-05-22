@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import NavbarTop from "./NavbarTop";
-import BreadcrumbComponent from "./BreadcrumbComponent";
-import { useData } from "../contexts/FirebaseDataContext";
+import NavbarTop from "../Header/NavbarTop";
+import BreadcrumbComponent from "../Header/BreadcrumbComponent";
+import { useData } from "../../contexts/FirebaseDataContext";
 import { useEffect, useState } from "react";
 
 const AdDetails = () => {

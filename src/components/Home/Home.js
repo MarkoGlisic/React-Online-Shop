@@ -1,5 +1,5 @@
 import Pagination from "./Pagination";
-import NavbarTop from "./NavbarTop.jsx";
+import NavbarTop from "../Header/NavbarTop.jsx";
 
 const Home = () => {
   return (

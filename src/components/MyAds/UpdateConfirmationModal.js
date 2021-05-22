@@ -1,4 +1,4 @@
-import { useData } from "../contexts/FirebaseDataContext";
+import { useData } from "../../contexts/FirebaseDataContext";
 import { Button, InputGroup, FormControl, Modal, Form } from "react-bootstrap";
 import { useRef, useState } from "react";
 

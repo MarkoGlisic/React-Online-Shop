@@ -1,5 +1,5 @@
 import { Navbar, Nav } from "react-bootstrap";
-import {useAuth} from '../contexts/AuthContext'
+import {useAuth} from '../../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
 
 const NavbarTop = () => {

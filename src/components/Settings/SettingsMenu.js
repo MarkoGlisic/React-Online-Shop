@@ -1,9 +1,9 @@
 import { Col, Container } from "react-bootstrap";
-import NavbarTop from "./NavbarTop";
-import BreadcrumbComponent from "./BreadcrumbComponent";
+import NavbarTop from "../Header/NavbarTop";
+import BreadcrumbComponent from "../Header/BreadcrumbComponent";
 import SettingsHeader from "./SettingsHeader";
 import SettingsOptions from "./SettingsOptions";
-import styles from "../modules/settings.module.css";
+import styles from "../../modules/settings.module.css";
 
 const SettingsMenu = () => {
   return (

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { ListGroup, Container, Image } from "react-bootstrap";
-import NavbarTop from "../components/NavbarTop";
-import BreadcrumbComponent from "./BreadcrumbComponent";
-import categories from "../categories";
+import NavbarTop from "../Header/NavbarTop";
+import BreadcrumbComponent from "../Header/BreadcrumbComponent";
+import categories from "../../categories";
 
 const CategoryList = () => {
   return (

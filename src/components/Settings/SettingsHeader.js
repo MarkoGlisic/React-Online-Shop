@@ -1,6 +1,6 @@
 import { Image } from "react-bootstrap";
-import userImage from "../images/user/user.png";
-import styles from "../modules/settings.module.css";
+import userImage from "../../images/user/user.png";
+import styles from "../../modules/settings.module.css";
 
 const SettingsHeader = ({ userName }) => {
   return (

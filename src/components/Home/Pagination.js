@@ -1,9 +1,9 @@
 import { Container, Row } from "react-bootstrap";
-import { useData } from "../contexts/FirebaseDataContext";
+import { useData } from "../../contexts/FirebaseDataContext";
 import { useState } from "react";
 import ReactPaginate from "react-paginate";
-import AdCardList from "../components/AdCardList";
-import styles from "../modules/pagination.module.css";
+import AdCard from "../AdCard/AdCard";
+import styles from "../../modules/pagination.module.css";
 
 const Pagination = () => {
   const { allAds } = useData();
@@ -20,7 +20,7 @@ const Pagination = () => {
     .map((ad) => {
       return (
         <div key={ad.title}>
-          <AdCardList
+          <AdCard
             category={ad.category}
             title={ad.adName}
             price={ad.price}
