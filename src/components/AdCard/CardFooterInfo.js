@@ -9,26 +9,17 @@ const CardFooterInfo = ({ adOwner, adViews, category, title }) => {
     <>
       <Container className="d-flex flex-row">
         <Container
-          className="flex-column d-flex"
-          style={{
-            marginLeft: "-6.5rem",
-            verticalAlign: "middle  ",
-            marginTop: "20px",
-          }}
+          className={`flex-column d-flex ${styles.cardContainer} `}
         >
           <Container className="d-flex flex-row">
             <PersonOutline
               height="13px"
               width="13px"
-              color="#989898"
-              style={{ marginRight: "3px", marginLeft: "2px" }}
+              color= "#989898"
+              className={styles.iconMargin}
             />
             <div
-              style={{
-                color: "#989898",
-                fontSize: "14px",
-                marginTop: "3.5px",
-              }}
+              className={styles.cardFooterTextLeft}
             >
               {adOwner}
             </div>
@@ -39,15 +30,11 @@ const CardFooterInfo = ({ adOwner, adViews, category, title }) => {
               height="13px"
               width="13px"
               color="#989898"
-              style={{ marginRight: "3px", marginLeft: "2px" }}
+              className={styles.iconMargin}
             />
             <Link to={`/category/${category}`} style={{ color: "inherit" }}>
               <div
-                style={{
-                  color: "#989898",
-                  fontSize: "14px",
-                  marginTop: "3px",
-                }}
+                className={styles.cardFooterTextLeft}
               >
                 {category}
               </div>
@@ -56,14 +43,10 @@ const CardFooterInfo = ({ adOwner, adViews, category, title }) => {
               height="13px"
               color="#989898"
               width="13px"
-              style={{ marginRight: "2px", marginLeft: "15px" }}
-            />
+              className={styles.iconEye}
+              />
             <div
-              style={{
-                color: "#989898",
-                fontSize: "14px",
-                marginTop: "3.5px",
-              }}
+            className={styles.cardFooterTextLeft}
             >
               {`Views: ${adViews}`}
             </div>

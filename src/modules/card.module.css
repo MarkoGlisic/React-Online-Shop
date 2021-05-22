@@ -1,0 +1,21 @@
+.iconMargin {
+  margin-right: 3px;
+  margin-left: 2px;
+}
+
+.iconEye {
+  margin-right: 2px;
+  margin-left: 15px;
+}
+
+.cardContainer {
+  margin-left: -6.5rem;
+  vertical-align: middle;
+  margin-top: 20px;
+}
+
+.cardFooterTextLeft {
+  color: #989898;
+  font-size: 14px;
+  margin-top: 3.5px;
+}
