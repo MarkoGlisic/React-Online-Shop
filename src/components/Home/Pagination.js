@@ -35,7 +35,7 @@ const Pagination = () => {
 
   return (
     <div>
-      <div style={{ marginTop: "4rem", marginBottom: "10rem" }}>
+      <div className={styles.paginationContainer}>
         <Container>
           <Row>{displayAds}</Row>
         </Container>

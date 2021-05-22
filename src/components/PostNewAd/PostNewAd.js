@@ -1,10 +1,12 @@
 import { useRef } from "react";
-import { useAuth } from "../../contexts/AuthContext";
 import { useHistory } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
+import { useData } from "../../contexts/FirebaseDataContext";
 import { Container, Form, Col, Button } from "react-bootstrap";
 import Navbar from "../Header/NavbarTop.jsx";
-import { useData } from "../../contexts/FirebaseDataContext";
 import BreadcrumbComponent from "../Header/BreadcrumbComponent";
+import styles from '../../modules/postNewAd.module.css'
+
 
 const PostNewAd = () => {
   const history = useHistory();
@@ -15,7 +17,7 @@ const PostNewAd = () => {
   const adCityRef = useRef();
   const adPriceRef = useRef();
   const adCategoryRef = useRef();
-  const { currentUserEmail, currentUserName } = useAuth();
+  const { currentUserName } = useAuth();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,15 +33,12 @@ const PostNewAd = () => {
     history.push("/");
   };
 
-  console.log(currentUserEmail);
-  console.log(currentUserName);
-
   return (
     <div>
       <Navbar />
       <BreadcrumbComponent path={"my-ads"} name={'My Ads'}id={'Post New'}/>
-      <h2 style={{textAlign:'center', marginTop:'2rem',color:'#343A40'}}>Post New Ad</h2>
-      <Container style={{ marginTop: "2rem" }}>
+      <h2 className={styles.newAdTitle}>Post New Ad</h2>
+      <Container className={styles.newAdContainer}>
         <Form onSubmit={handleSubmit}>
           <Form.Row>
             <Form.Group as={Col}>

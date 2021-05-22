@@ -27,3 +27,8 @@
   color: #aaa;
   background-color: #2b2eff;
 }
+
+.paginationContainer {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}

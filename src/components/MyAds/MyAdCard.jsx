@@ -1,11 +1,12 @@
 import { Card, Container} from "react-bootstrap"
 import DeleteConfirmationModal from './DeleteConfirmationModal'
 import UpdateConfirmationModal from './UpdateConfirmationModal'
+import styles from '../../modules/myAds.module.css'
 
 const MyAdCard = ({category, price, imgURL, title, description, city}) => {
   return (
     <>
-    <Card style={{ width: "18rem", margin:'80px 18px -20px 40px'}}>
+    <Card className={styles.myAdsContainer}>
       <Card.Img variant="top" src={imgURL}/>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
