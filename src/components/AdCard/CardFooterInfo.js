@@ -32,7 +32,7 @@ const CardFooterInfo = ({ adOwner, adViews, category, title }) => {
               color="#989898"
               className={styles.iconMargin}
             />
-            <Link to={`/category/${category}`} style={{ color: "inherit" }}>
+            <Link to={`/category/${category}`} className={styles.cardLink}>
               <div
                 className={styles.cardFooterTextLeft}
               >

@@ -1,25 +1,19 @@
 import { Container, Row } from "react-bootstrap";
+import styles from '../../modules/card.module.css'
 
 const CardText = ({ title, price, description }) => {
   return (
     <>
-      <Container className="d-flex flex-row" style={{ position: "relative" }}>
+      <Container className={`d-flex flex-row ${styles.cardTextContainer}`}>
         <Row>
-          <h5 style={{ marginLeft: "8px", color: "#333333" }}>{title}</h5>
-          <p style={{ position: "absolute", right: "5px", color: "#333333" }}>
+          <h5 className={styles.cardTextTitle}>{title}</h5>
+          <p className={styles.cardTextPrice}>
             Price: {price}$
           </p>
         </Row>
       </Container>
       <p
-        style={{
-          overflow: "hidden",
-          maxWidth: "75ch",
-          textOverflow: "ellipsis",
-          whiteSpace: "nowrap",
-          marginLeft: "8px",
-          color: "#909090",
-        }}
+        className={styles.cardTextDescription}
       >
         {description}
       </p>

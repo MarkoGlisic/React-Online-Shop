@@ -16,11 +16,11 @@ const AdCard = ({
   return (
     <div>
       <Media
-        className="shadow rounded"
-        style={{ height: "150px", margin: "10px 0px 10px 5px", padding: "3px" }}
+        className={`shadow rounded ${styles.adCardContainer}`}
+        
       >
         <CardImage imgURL={imgURL} />
-        <Media.Body style={{ width: "80vw" }}>
+        <Media.Body className={styles.adCardBody}>
           <CardText title={title} price={price} description={description} />
           <CardFooterInfo
             adOwner={adOwner}

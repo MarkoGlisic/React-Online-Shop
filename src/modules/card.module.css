@@ -19,3 +19,49 @@
   font-size: 14px;
   margin-top: 3.5px;
 }
+
+.adCardContainer {
+  height: 150px;
+  margin: 10px 0px 10px 5px;
+  padding: 3px;
+}
+
+.adCardBody {
+  width: 78vw;
+}
+
+.cardButtonContainer {
+  padding: 0;
+  margin: 25px -10px 0 0;
+}
+
+.cardButton {
+  color: #3a3b3c;
+}
+
+.cardTextDescription {
+  overflow: hidden;
+  max-width: 75ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: 8px;
+  color: #909090;
+}
+
+.cardLink {
+  color: inherit;
+}
+.cardTextContainer {
+  position: relative;
+}
+
+.cardTextTitle {
+  margin-left: 8px;
+  color: #333333;
+}
+
+.cardTextPrice {
+  position: absolute;
+  right: 5px;
+  color: #333333;
+}

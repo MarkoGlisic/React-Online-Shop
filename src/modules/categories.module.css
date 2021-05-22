@@ -1,0 +1,12 @@
+.categoryContainer {
+  margin: 0;
+  padding: 0;
+}
+
+.categoryIcon {
+  font-size: 15px;
+}
+
+.categoryName {
+  margin: 0 0 0 12px;
+}

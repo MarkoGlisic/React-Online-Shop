@@ -5,14 +5,13 @@ import styles from '../../modules/card.module.css';
 const CardButton = ({ title }) => {
   return (
     <div
-      className="justify-content-end"
-      style={{ padding: "0", margin: "25px -10px 0 0 " }}
+      className={`justify-content-end ${styles.cardButtonContainer}`}
     >
       <Button
         as={Link}
         to={`/${title}`}
         variant="light"
-        style={{ color: "#3a3b3c" }}
+        className={styles.cardButton}
       >
         See more
       </Button>
