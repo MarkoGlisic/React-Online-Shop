@@ -2,7 +2,7 @@ import { Media } from "react-bootstrap";
 import CardImage from "./CardImage";
 import CardText from "./CardText";
 import CardFooterInfo from "./CardFooterInfo";
-
+import styles from '../../modules/card.module.css';
 
 const AdCard = ({
   category,

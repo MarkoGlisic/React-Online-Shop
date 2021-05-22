@@ -6,7 +6,6 @@ import Login from './Login/Login';
 import Signup from './Login/Signup';
 import ForgotPassword from './Login/ForgotPassword';
 import Home from './Home/Home';
-import UpdateProfile from './Settings/UpdateProfile';
 import PostNewAd from './PostNewAd/PostNewAd'
 import CategoryList from "./Categories/CategoryList";
 import AdDetails from "./Home/AdDetails";
@@ -24,7 +23,6 @@ function App() {
             <FirebaseDataProvider>
             <Switch>
               <PrivateRoute exact path="/" component={Home} />
-              <PrivateRoute path="/update-profile" component={UpdateProfile} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route exact path="/forgot-password" component={ForgotPassword} />

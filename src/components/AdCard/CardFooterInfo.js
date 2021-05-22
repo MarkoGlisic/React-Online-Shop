@@ -2,6 +2,7 @@ import { PersonOutline, PricetagOutline, EyeOutline } from "react-ionicons";
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import CardButton from "./CardButton";
+import styles from '../../modules/card.module.css';
 
 const CardFooterInfo = ({ adOwner, adViews, category, title }) => {
   return (
