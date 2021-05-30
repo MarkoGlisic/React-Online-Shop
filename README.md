@@ -25,6 +25,7 @@ List of features ready and TODOs for future development
 
 
 To-do list:
+* Add tests
 * Refactor Code
 * Adapt design for all screen sizes
 * Add other methods of signing in (Facebook, Google etc.)
