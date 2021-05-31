@@ -13,7 +13,7 @@
 * Firebase
 
 ## Screenshots
-![Example screenshot]()
+![Example screenshot](./src/images/screenshot.jpg)
 
 ## Features
 List of features ready and TODOs for future development
@@ -22,6 +22,7 @@ List of features ready and TODOs for future development
 * Pagination displaying 10 ads per page
 * Filter ads by user and category
 * Add, update and remove ads
+* Breadcrumbs in navigation
 
 
 To-do list:
