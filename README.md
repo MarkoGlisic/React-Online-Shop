@@ -13,7 +13,7 @@
 * Firebase
 
 ## Screenshots
-![Example screenshot](./src/images/screenshot.jpg)
+![Example screenshot](./src/images/screenshot.PNG)
 
 ## Features
 List of features ready and TODOs for future development
